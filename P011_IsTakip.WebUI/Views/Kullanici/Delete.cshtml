@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "_Layout2";
+}
+@model Kullanici
+<div class="row my-15">
+    <div class="col-xxl-12">
+        <div class="card card-xxl-strech mb-5">
+            <div class="card-header">
+                <h3 class="card-title align-items-start flex-column">Kullanıcı Silme İşlemi</h3>
+            </div>
+            <div class="card-body">
+                <form asp-action="Delete">
+                    <div class="mb-5">
+                        <label asp-for="Ad" class="form-label"></label>
+                        <input asp-for="Ad" class="form-control" disabled/>
+                        <span asp-validation-for="Ad" class="text-danger"></span>
+                    </div>
+                    <div class="mb-5">
+                        <label asp-for="Soyad" class="form-label"></label>
+                        <input asp-for="Soyad" class="form-control" disabled/>
+                        <span asp-validation-for="Soyad" class="text-danger"></span>
+                    </div>
+                    <div class="mb-5">
+                        <label asp-for="KullaniciKodu" class="form-label"></label>
+                        <input asp-for="KullaniciKodu" class="form-control" disabled />
+                        <span asp-validation-for="KullaniciKodu" class="text-danger"></span>
+                    </div>
+                    <div class="mb-5">
+                        <label asp-for="KullaniciSifre" class="form-label"></label>
+                        <input asp-for="KullaniciSifre" class="form-control" disabled/>
+                        <span asp-validation-for="KullaniciSifre" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-5">
+                        <label asp-for="Musteri.Email" class="form-label"></label>
+                        <input asp-for="Musteri.Email" class="form-control" disabled />
+                        <span asp-validation-for="Musteri.Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-5">
+                        <label asp-for="RolTanim" class="form-label"></label>
+                        <input asp-for="RolTanim" class="form-control" disabled />
+                        <span asp-validation-for="RolTanim" class="text-danger"></span>
+                    </div>             
+                    <div class="mb-6">
+                        <label asp-for="MailBildirim" class="form-label">
+                            <input asp-for="MailBildirim" class="form-check-input" disabled /> @Html.DisplayNameFor(model=>model.MailBildirim)
+                        </label>
+                    </div>
+
+                    <a asp-action="Index" class="btn btn-secondary"><i class="fa fa-arrow-left"></i>Listeye geri dön</a>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>Sil</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

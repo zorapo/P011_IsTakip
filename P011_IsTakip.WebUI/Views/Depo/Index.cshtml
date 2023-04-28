@@ -1,0 +1,56 @@
+﻿@{
+	Layout = "_Layout2";
+}
+@model IEnumerable<Depo>
+
+<div class="row my-15">
+	<div class="col-xxl-12">
+		<div class="card card-xxl-stretch mb-5">
+			<div class="card-header">
+				<div class="col-xxl-10 mt-5">
+					<h3 class="card-title align-items-start flex-column">DEPO LİSTESİ</h3>
+				</div>
+				<div class="col-xxl-2 mt-5">
+					<a asp-action="Create" class="btn btn-primary">Yeni Depo</a>
+				</div>
+			</div>
+			<div class="card-body py-3">
+				<table class="table table-striped table-row-bordered dt-init">
+					<thead>
+						<tr class="fw-border fs-5 text-gray-700">
+							<th>İşlemler</th>
+							<th>@Html.DisplayNameFor(model=>model.Tanim)</th>
+							<th>@Html.DisplayNameFor(model=>model.Aciklama)</th>
+							<th>@Html.DisplayNameFor(model=>model.Yetkili)</th>
+							<th>@Html.DisplayNameFor(model=>model.YetkiliTelefon)</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>
+									<a asp-action="Edit" asp-route-id="@item.Id" title="Düzenle" data-toggle="tooltip">
+										<i class="fas fa-pencil-alt text-success" style="width:80px; height:20px">Düzenle</i>
+									</a>
+									<a asp-action="Detail" asp-route-id="@item.Id" title="Detay" data-toggle="tooltip">
+										<i class="fas fa-info text-primary" style="width:80px; height:20px">Detay</i>
+									</a>
+									<a asp-action="Delete" asp-route-id="@item.Id" title="Sil" data-toggle="tooltip">
+										<i class="fas fa-trash-alt text-danger" style="width:80px; height:20px">Sil</i>
+									</a>
+								</td>
+								<td>@Html.DisplayFor(modelItem=>item.Tanim)</td>
+								<td>@Html.DisplayFor(modelItem=>item.Aciklama)</td>
+								<td>@Html.DisplayFor(modelItem=>item.Yetkili)</td>
+								<td>@Html.DisplayFor(modelItem=>item.YetkiliTelefon)</td>
+
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

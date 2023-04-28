@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "_Layout2";
+}
+@model Depo
+<div class="row my-15">
+    <div class="col-xxl-12">
+        <div class="card card-xxl-strech mb-5">
+            <div class="card-header">
+                <h3 class="card-title align-items-start flex-column">Depo Silme İşlemi</h3>
+            </div>
+            <div class="card-body">
+                <form asp-action="Delete">
+                    <div class="mb-5">
+                        <label asp-for="Tanim" class="form-label"></label>
+                        <input asp-for="Tanim" class="form-control" disabled />
+                        <span asp-validation-for="Tanim" class="text-danger"></span>
+                    </div>
+                    <div class="mb-5">
+                        <label asp-for="Aciklama" class="form-label"></label>
+                        <input asp-for="Aciklama" class="form-control" disabled />
+                        <span asp-validation-for="Aciklama" class="text-danger"></span>
+                    </div>
+                    <div class="mb-5">
+                        <label asp-for="Yetkili" class="form-label"></label>
+                        <input asp-for="Yetkili" class="form-control" disabled />
+                        <span asp-validation-for="Yetkili" class="text-danger"></span>
+                    </div>
+                    <div class="mb-5">
+                        <label asp-for="YetkiliTelefon" class="form-label"></label>
+                        <input asp-for="YetkiliTelefon" class="form-control" disabled />
+                        <span asp-validation-for="YetkiliTelefon" class="text-danger"></span>
+                    </div>
+
+                    <a asp-action="Index" class="btn btn-secondary"><i class="fa fa-arrow-left"></i>Listeye geri dön</a>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>Sil</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
